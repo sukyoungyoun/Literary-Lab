@@ -1,0 +1,269 @@
+/* Resetting default margin and font */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8; /* Light background color */
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #222; /* Dark background color */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.menu a:hover {
+    color: #db0000; /* Dark red color on hover */
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff; /* White background color */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Title styles */
+.title {
+    text-align: center;
+    color: #000000; /* Black text color */
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Search container styles */
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 160px);
+    padding: 12px;
+    border: 2px solid #222; /* Dark border color */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #ff443b; /* Red border color on focus */
+    outline: none;
+}
+
+/* Button styles */
+button {
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #ff443b; /* Red button color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none; /* Remove default focus outline */
+}
+
+button:hover {
+    background-color: #db0000; /* Darker red color on hover */
+}
+
+/* Search results styles */
+.results-title {
+    text-align: center;
+    color: #222; /* Dark text color */
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.results {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results li {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #eeeeee; /* Light gray background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative; /* Positioning for hover effects */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.results li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent black background */
+    transition: left 0.3s;
+}
+
+.results li:hover::before {
+    left: 0;
+}
+
+.results li img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.results li:hover img {
+    transform: scale(1.1); /* Increase image size on hover */
+}
+
+.results li h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #333; /* Dark text color */
+    font-size: 20px;
+}
+
+.results li p {
+    margin: 0;
+    text-align: center;
+    color: #666; /* Gray text color */
+    font-size: 16px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Light gray modal background color */
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ff6565;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #ff6565;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Additional CSS Animations */
+
+/* Add a pulse animation to the search button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    animation: pulse 0.5s infinite alternate;
+}
+
+/* Add a rotating animation to the navigation links */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.menu a:hover {
+    animation: rotate 1s linear infinite;
+}
+
+/* Add a fade-in animation to the modal */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add a flip animation to the search results */
+@keyframes flip {
+    0% {
+        transform: perspective(400px) rotateY(0deg);
+    }
+    50% {
+        transform: perspective(400px) rotateY(180deg);
+    }
+    100% {
+        transform: perspective(400px) rotateY(0deg);
+    }
+}
+
+.results li:hover {
+    animation: flip 1s ease-in-out;
+}
